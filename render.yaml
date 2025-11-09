@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: my-fastapi-app
+    env: docker
+    repo: "git@github.com:subodhkangale07/CopyCatch-Ml_Backend.git"
+    branch: main
+    dockerfilePath: ./Dockerfile
+    plan: free   # change to starter or standard when ready
+    buildCommand: ""   # Docker will build, so no platform build command
+    startCommand: ""   # CMD in Dockerfile will be used
+    envVars:
+      - key: PORT
+        value: "8000"
+    autoDeploy: true
+    healthCheckPath: /health
